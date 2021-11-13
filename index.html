@@ -1,0 +1,89 @@
+<!--
+   HTML - HyperText Markup Language
+   Texto com links
+   Markup - Tags 
+  -->
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>NLW Heat</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="avatar">
+          <span>
+            <img src="images/build.svg" alt="Selo" />
+          </span>
+          <img src="images/pixel.jpg" alt="Foto" />
+        </div>
+
+        <h1 id="userName">Nome Usuário</h1>
+        <a href="https://github.com/" target="_blank">
+          <img src="images/github.svg" alt="ícone Github" />
+          @paganotti9</a
+        >
+        <p>
+          Nati Natinni Natilli Lohane Savik de Albuquerque de La Tustuanne de
+          Boldas, mais conhecida como Danusa Deyse Medley Leona de Pampuc de La
+          Gaspahí
+        </p>
+        <ul id="socialLinks">
+          <li class="youtube">
+            <a href="http://youtube.com/" target="_blank">
+              <img src="images/youtube.svg" alt="Ícone Youtube" />
+            </a>
+          </li>
+          <li class="instagram">
+            <a href="http://instagram.com/" target="_blank">
+              <img src="images/instagram.svg" alt="Ícone Instagram" />
+            </a>
+          </li>
+          <li class="facebook">
+            <a href="http://facebook.com" target="_blank">
+              <img src="images/facebook.svg" alt="Ícone Facebook" />
+            </a>
+          </li>
+          <li class="twitter">
+            <a href="http://twitter.com" target="_blank">
+              <img src="images/twitter.svg" alt="Ícone Twitter" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <script>
+      const linksSocialMedia = {
+        github: 'paganotti9',
+        youtube: 'paganotti9',
+        facebook: 'paganotti9',
+        instagram: 'paganotti9',
+        twitter: 'paganotti9'
+      }
+
+      function changeUserName() {
+        document.getElementById('userName').textContent = 'Caio'
+      }
+
+      changeUserName()
+
+      function changeSocialMediaLinks() {
+        for (let li of socialLinks.children) {
+          const social = li.getAttribute('class')
+
+          li.children[0].href = `http://${social}.com/${linksSocialMedia[social]}`
+        }
+      }
+      changeSocialMediaLinks()
+    </script>
+  </body>
+</html>
